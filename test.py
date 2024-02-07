@@ -7,7 +7,7 @@ import emoji
 import keras
 
 # Define the URL of the model file on Google Drive and the output path
-model_url = 'https://drive.google.com/uc?id=1k0riAPbKWXMOxlCLgY9tblIR7et86rMT'
+model_url = 'https://drive.google.com/uc?id=12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs'
 output_path = 'my_model2.hdf5'
 
 # Download the model from Google Drive
@@ -69,4 +69,4 @@ def app():
 # Run the Streamlit app
 if __name__ == '__main__':
     app()
-
+#https://drive.google.com/file/d/12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs/view?usp=sharing
