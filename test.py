@@ -1,4 +1,3 @@
-import gdown
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
@@ -6,40 +5,34 @@ import numpy as np
 import emoji
 import keras
 
-# Define the URL of the model file on Google Drive and the output path
-model_url = 'https://drive.google.com/uc?id=12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs'
-output_path = 'my_model2.hdf5'
+path = "my_model2.hdf5"
 
-# Download the model from Google Drive
-gdown.download(model_url, output_path, quiet=False)
-model = keras.models.load_model(output_path)
+model = keras.models.load_model(path)
 
-# Define the Streamlit app
+def preprocess_image(image: Image.Image) -> np.ndarray:
+    """ 
+    Preprocess the image to be compatible with the model.
+    Args:
+        image: Image to be processed.
+    Returns:
+        Processed image.
+    """
+    image = image.resize((224, 224))
+    image_array = np.array(image)
+    image_array = image_array / 255.0
+    image_array = np.expand_dims(image_array, axis=0)
+    return image_array
+
+
 def app():
     st.title('NutriScore: A Deep Learning-based Food Classification System')
-    
-    # Load the pre-trained model
-    
-    
-    # Define the user input
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
     score = 0
     
     for uploaded_file in uploaded_files:
-        # Load the image
         image = Image.open(uploaded_file)
+        image_array = preprocess_image(image)
         
-        # Resize the image to the input size of the model
-        image = image.resize((224, 224))
-        
-        # Convert the image to a numpy array
-        image_array = np.array(image)
-        
-        # Preprocess the image
-        image_array = image_array / 255.0
-        image_array = np.expand_dims(image_array, axis=0)
-        
-        # Make a prediction using the deep learning model
         prediction = model.predict(image_array)
         
         class_names = ['Healthy', 'Unhealthy']
@@ -67,8 +60,5 @@ def app():
         nef = emoji.emojize(":neutral_face:")
         st.write(f'<span style="font-size: 3rem">{nef}</span>', unsafe_allow_html=True)
 
-# Run the Streamlit app
 if __name__ == '__main__':
     app()
-#https://drive.google.com/file/d/12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs/view?usp=sharing
-# https://drive.google.com/file/d/12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs/view?usp=sharing
