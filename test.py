@@ -5,7 +5,7 @@ import numpy as np
 import emoji
 import keras
 
-path = "Asharma002/_nutri_/my_model2.hdf5"
+path = "./my_model2.hdf5"
 
 model = keras.models.load_model(path)
 
