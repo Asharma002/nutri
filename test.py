@@ -12,13 +12,14 @@ output_path = 'my_model2.hdf5'
 
 # Download the model from Google Drive
 gdown.download(model_url, output_path, quiet=False)
+model = keras.models.load_model(output_path)
 
 # Define the Streamlit app
 def app():
     st.title('NutriScore: A Deep Learning-based Food Classification System')
     
     # Load the pre-trained model
-    model = keras.models.load_model(output_path)
+    
     
     # Define the user input
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
@@ -70,3 +71,4 @@ def app():
 if __name__ == '__main__':
     app()
 #https://drive.google.com/file/d/12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs/view?usp=sharing
+# https://drive.google.com/file/d/12077yIkpCaAkE8gb-H_Kq7SCXtv6sDPs/view?usp=sharing
