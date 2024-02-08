@@ -11,4 +11,20 @@ Obesity is one of the contemporary issues we are now facing.But the use of class
 **active link of product**
 : https://asharma002-nutriscore-test-l5qh7h.streamlit.app/
 
+## Ownership
 
+- If you use this tool/library, you are obligated to sponsor the [creator](https://github.com/jaywyawhare) in a way that makes you not a mega jerk. Remember, mega jerks are never cool.
+
+- Using the word <b>'NUTRI'</b> in your project implies that the NUTRI does not own your project. However, if you don't use the word <b>'NUTRI'</b> in your project implies that the NUTRI owns your project. If you like to keep ownership of your project, use the word <b>'NUTRI'</b> in your project.
+
+    Here are some examples of how to use the word <b>'NUTRI'</b> in your project:
+
+    - ✅ "ProjectNUTRI" (Does not owned by NUTRI)
+
+    - ❌ "Linux" (Owned by NUTRI, please consider using the word <b>'NUTRI'</b> in your project)
+
+    - ❌ "Windows" (Owned by NUTRI, please consider using the word <b>'NUTRI'</b> in your project)
+
+
+## License
+This project is licensed under the [DBaJ-NC-CFL](./LICENCE.md).
